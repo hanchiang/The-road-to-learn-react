@@ -1,0 +1,34 @@
+body {
+	color: #222;
+	background: #f4f4f4;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue", Helvetica, Verdana, Georgia, Roboto, sans-serif;
+}
+
+/* Styles from the book: The road to laern react */
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-right: 5px;
+	border: 1px solid #ddd;
+}
+
+button {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	color: #808080;
+	cursor: pointer;
+	transition: color 0.1s ease-in-out;
+}
+
+button:hover {
+	color: #222;
+}
