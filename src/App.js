@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import PropTypes from 'prop-types';
 
 const DEFAULT_QUERY = 'redux';
 const DEFAULT_PAGE = 0;
@@ -30,7 +30,7 @@ function isSearched(searchTerm) {
 
 
 
-function Button({onClick, className='', children}) {
+function Button({onClick, className, children}) {
     return (
         <button
             onClick={onClick}
@@ -41,6 +41,15 @@ function Button({onClick, className='', children}) {
         </button>
     )
 }
+
+Button.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired
+};
+Button.defaultProps = {
+    className: ''
+};
 
 
 // function Serach(props) ....
@@ -60,6 +69,15 @@ function Search({value, onChange, children, onSubmit}) {
         </form>
     );
 }
+Search.propTypes = {
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    children: PropTypes.node,
+    onSubmit: PropTypes.func.isRequired
+};
+Search.defaultProps = {
+    children: ''
+};
 
 
 function Table({list, onDismiss}) {
@@ -93,6 +111,19 @@ function Table({list, onDismiss}) {
     );
 }
 
+Table.PropTypes = {
+    // list: PropTypes.array.isRequired,
+    list: PropTypes.arrayOf(
+        PropTypes.shape({
+            objectID: PropTypes.string.isRequired,
+            author: PropTypes.string,
+            url: PropTypes.string,
+            num_comments: PropTypes.number,
+            points: PropTypes.number
+        })
+    ).isRequired,
+    onDismiss: PropTypes.func.isRequired
+};
 
 // To cache the results of API calls,
 // the results object be a mapping of the search term(key) to the result returned by the API(value)
