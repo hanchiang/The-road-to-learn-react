@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 import PropTypes from 'prop-types';
 
-const DEFAULT_QUERY = 'redux';
+const DEFAULT_QUERY = 'react';
 const DEFAULT_PAGE = 0;
 const DEFAULT_HPP = 100;
 
@@ -83,7 +84,7 @@ Search.defaultProps = {
 function Table({list, onDismiss}) {
     return (
         <div className="table">
-            <div className="table-row">
+            <div className="table-row-header">
                     <span style={{width: '40%'}}><strong>Title</strong></span>
                     <span style={{width: '30%'}}><strong>Author</strong></span>
                     <span style={{width: '10%'}}><strong>Comments</strong></span>
@@ -304,3 +305,9 @@ class App extends Component {
 }
 
 export default App;
+
+export {
+    Button,
+    Table,
+    Search
+};
