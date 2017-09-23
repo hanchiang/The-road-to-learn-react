@@ -17,7 +17,7 @@ exports[`App snapshots 1`] = `
     </h2>
     <p>
       Time now is 
-      11:32:02 PM
+      10:18:44 PM
     </p>
   </div>
   <div
@@ -157,9 +157,13 @@ exports[`Table snapshots 1`] = `
         }
       }
     >
-      <strong>
+      <button
+        className="button-inline button-active"
+        onClick={[Function]}
+        type="button"
+      >
         Title
-      </strong>
+      </button>
     </span>
     <span
       style={
@@ -168,9 +172,13 @@ exports[`Table snapshots 1`] = `
         }
       }
     >
-      <strong>
+      <button
+        className="button-inline"
+        onClick={[Function]}
+        type="button"
+      >
         Author
-      </strong>
+      </button>
     </span>
     <span
       style={
@@ -179,9 +187,13 @@ exports[`Table snapshots 1`] = `
         }
       }
     >
-      <strong>
+      <button
+        className="button-inline"
+        onClick={[Function]}
+        type="button"
+      >
         Comments
-      </strong>
+      </button>
     </span>
     <span
       style={
@@ -190,9 +202,13 @@ exports[`Table snapshots 1`] = `
         }
       }
     >
-      <strong>
+      <button
+        className="button-inline"
+        onClick={[Function]}
+        type="button"
+      >
         Points
-      </strong>
+      </button>
     </span>
     <span
       style={
@@ -200,7 +216,9 @@ exports[`Table snapshots 1`] = `
           "width": "10%",
         }
       }
-    />
+    >
+      Archive
+    </span>
   </div>
   <div
     className="table-row"
