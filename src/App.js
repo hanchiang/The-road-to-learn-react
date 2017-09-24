@@ -28,12 +28,17 @@ function isSearched(searchTerm) {
     }
 }
 
-const Loading = () => <i className="fa fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+function Loading() {
+    return <i className="fa fa-spinner fa-spin fa-2x" aria-hidden="true"></i>;
+}
 
 // Higher order component, which takes care of the conditional rendering of a loading indicator or a list listof data when it is available
-const withLoading = (Component) => ({ isLoading, ...rest }) =>
-    // OPTIONAL: isLoading prop is specific to this component and shouldn't be passed through
-    isLoading ? <Loading /> : <Component {...rest} />
+function withLoading(Component) {
+    return function({isLoading, ...rest}) {
+        // OPTIONAL: isLoading prop is specific to this component and shouldn't be passed through
+        return isLoading? <Loading /> : <Component {...rest} />;
+    }
+}
 
 // Important to create the HOC outside the render() method
 const ButtonWithLoading = withLoading(Button);
