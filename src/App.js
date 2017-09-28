@@ -107,6 +107,15 @@ Search.defaultProps = {
 };
 
 
+// Define a list of sort functions for each column of the table
+const SORTS = {
+    NONE: (list) => list,
+    TITLE: (list) => sortBy(list, 'title'),
+    AUTHOR: (list) => sortBy(list, 'author'),
+    COMMENTS: (list) => sortBy(list, 'num_comments').reverse(),
+    POINTS: (list) => sortBy(list, 'points').reverse()
+}
+
 function SortCaret({ isSortReverse, sortKey, activeSortKey }) {
     let sortCaret = null;
     if (sortKey === activeSortKey) {
@@ -215,15 +224,6 @@ Table.PropTypes = {
     onDismiss: PropTypes.func.isRequired
 };
 
-
-// Define a list of sort functions for each column of the table
-const SORTS = {
-    NONE: (list) => list,
-    TITLE: (list) => sortBy(list, 'title'),
-    AUTHOR: (list) => sortBy(list, 'author'),
-    COMMENTS: (list) => sortBy(list, 'num_comments').reverse(),
-    POINTS: (list) => sortBy(list, 'points').reverse()
-}
 
 const updateSearchTopStoriesState = (hits, page) => (prevState) => {
     const { searchKey, results } = prevState;

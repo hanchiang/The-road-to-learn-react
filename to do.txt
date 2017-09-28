@@ -1,2 +1,0 @@
-Reorganise codes into multiple component modules
-Continue to update proptypes for components
